@@ -1,0 +1,23 @@
+public class WatchOpponentPlayer extends PigPlayer{
+  
+  public WatchOpponentPlayer(){
+    super("WatchOpponentPlayer");
+  }
+  
+  public boolean isRolling(int turnTotal, int opponentScore){
+    if(this.getScore() >= PigGame.GOAL-20 && this.getScore() < PigGame.GOAL && turnTotal < 20)
+      return true;
+    else if(opponentScore >= PigGame.GOAL-20 && this.getScore() < PigGame.GOAL && turnTotal < 20)
+      return true;
+    else if(this.getScore() < opponentScore && turnTotal < 20)
+      return true;
+    else if(this.getScore() > opponentScore && turnTotal < 10)
+      return true;
+    else
+      return false;
+  }
+  
+  
+  
+  
+}

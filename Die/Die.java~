@@ -1,0 +1,28 @@
+
+public class Die {
+  private static double side;
+  
+  //methods
+  /*roll() rolls a 6 sided die every time whereas rollDie() rolls a die with
+   * the sides set in setSides().
+   */
+  public static int roll() {
+    side = 6;
+    side = Math.random()*6+1;
+    return (int)side;
+  }
+  
+  public void setSides(double s) {
+    side = s;
+  }
+  
+  public int getSides() {
+    return (int)side;
+  }
+  
+  public int rollDie() {
+    side = Math.random()*side+1;
+    return (int)side;
+  }
+  
+}

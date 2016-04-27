@@ -1,0 +1,19 @@
+public class StrategicPlayer extends PigPlayer{
+  
+  public StrategicPlayer(){
+    super("Kevin Broten's Strategic Player");
+  }
+  
+  public boolean isRolling(int turnTotal, int opponentScore){
+    if(opponentScore > this.getScore() && turnTotal < 20)
+      return true;
+    else if(opponentScore < this.getScore() && opponentScore >= this.getScore() - 10 && turnTotal < 20)
+      return true;
+    else if(opponentScore<this.getScore()-20 && turnTotal < 10)
+      return true;
+    else
+      return false;
+  }
+  
+  
+}

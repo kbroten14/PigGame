@@ -1,0 +1,26 @@
+public class SimpleHoldPlayer extends PigPlayer{
+  public int hold;
+  
+  public SimpleHoldPlayer(){
+    super("Computer");
+    hold = 20;
+  }
+  
+  public SimpleHoldPlayer(String name){
+    super(name);
+    hold = 20;
+  }
+  
+  public SimpleHoldPlayer(String name, int value){
+    super(name);
+    hold = value;
+  }
+  
+  public boolean isRolling(int turnTotal, int opponentScore){
+    if(turnTotal < hold && !super.won())
+      return true;
+    else
+      return false;
+  }
+  
+}

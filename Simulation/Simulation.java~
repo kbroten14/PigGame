@@ -1,0 +1,19 @@
+public class Simulation{
+  
+  public static void firstAdvantage(long simulations){
+    int p1Wins, p2Wins;
+    PigPlayer sim1 = new SimpleHoldPlayer("Sim Player 1");
+    PigPlayer sim2 = new SimpleHoldPlayer("Sim Player 2");
+    PigGame game = new PigGame(sim1, sim2);
+    for(long x=0; x<= simulations; x++){
+      game.playGame;
+      if(sim1.won())
+        p1Wins++;
+      else if(sim2.won())
+        p2Wins++;
+    }
+    System.out.println("Sim Player 1 wins: " + p1Wins);
+    System.out.println("Sim Player 2 wins: " + p2Wins);
+  }
+  
+}

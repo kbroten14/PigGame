@@ -1,0 +1,37 @@
+public class FourTurnsPlayer extends PigPlayer{
+  private int holdTurns;
+  
+  public FourTurnsPlayer(){
+    super("Four Turns Player");
+    holdTurns = 0;
+  }
+  
+  public void reset(){
+    super.reset();
+    holdTurns = 0;
+  }
+  
+  public boolean isRolling(int turnTotal, int opponentScore){
+    if(opponentScore<PigGame.GOAL && turnTotal < (PigGame.GOAL-this.getScore())/4 && holdTurns == 0){
+      return true;
+    }
+    else if(opponentScore<PigGame.GOAL && turnTotal < (PigGame.GOAL-this.getScore())/3 && holdTurns == 1){
+      return true;
+    }
+    else if(opponentScore<PigGame.GOAL && turnTotal < (PigGame.GOAL-this.getScore())/2 && holdTurns == 2){
+      return true;
+    }
+    else if(opponentScore<PigGame.GOAL && turnTotal < PigGame.GOAL-this.getScore() && holdTurns == 3){
+      return true;
+    }
+    else{
+      holdTurns++;
+      return false;
+    }
+  }
+  
+    
+    
+    
+}
+
